@@ -5,15 +5,14 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Playfair Display', 'Georgia', serif;
+.main-continer{
+   font-family: 'Playfair Display', 'Georgia', serif;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .signup-form {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
@@ -155,7 +154,6 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .signup-form {
     padding: 40px 30px;

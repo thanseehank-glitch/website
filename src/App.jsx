@@ -5,10 +5,8 @@ function App() {
 
   return (
     <div>
-    
-      <BrowserRouter>
         <Routing />
-      </BrowserRouter>
+    
       <ToastContainer
         position="top-right"
         autoClose={1000}

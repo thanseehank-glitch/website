@@ -5,28 +5,28 @@ import "./SignUp.css"
 import { toast } from "react-toastify"
 
 function SignUp() {
-  const Navigate=useNavigate()
-  const[input,useInput]=useState({
-    username :"",
-    email :"",
-    password:"",
+  const Navigate = useNavigate()
+  const [input, setInput] = useState({
+    username: "",
+    email: "",
+    password: "",
   })
-  const [error,setError]=useState({})
+  const [error, setError] = useState({})
 
-  function handleInput(e){
-          const{name,value}=e.target;
-          setInput((prev)=>({
-            ...prev,
-            [name]:value,
-          }));
-          setError({});
+  function handleInput(e) {
+    const { name, value } = e.target;
+    setInput((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    setError({});
   }
-function validateform(){
-   let Newerror = {}
+  function validateform() {
+    let Newerror = {}
     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     const passwordRegex = /^.{6,}$/;
-    if(input.username === "" || input.username === null){
-      Newerror.user ="user name required"
+    if (input.username === "" || input.username === null) {
+      Newerror.user = "user name required"
     }
     if (!input.email) {
       Newerror.email = "Email is required";
@@ -45,7 +45,7 @@ function validateform(){
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!ValidateFrom()) {
+    if (!validateform ) {
       return;
     }
 
@@ -58,39 +58,37 @@ function validateform(){
       }
       await axios.post("http://localhost:3000/users", {
         ...input,
-        role : "user" ,
-        status : "active"
       });
       setInput({ username: "", email: "", password: "" });
       setError({});
       toast.success("Registration successful!");
-      
-        Navigate("/Login")
-    
+
+      Navigate("/login")
+
 
     } catch (error) {
       console.error("Error registering user:", error);
       setError({ general: "Server error, please try again" })
     }
-  
-}
+
+  }
   return (
-    <div>
+    <div className="main-continer">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2 className="signup-title">Create Account</h2>
         {error.general && <p className="error-message general-error">{error.general}</p>}
-          <div className="form-group">
-                <label className="form-label">Username</label>
-                <input
-                className="form-input"
-                type="text"
-                name="username"
-                placeholder="Enter-userName"
-                value={input.username}
-                onChange={handleInput}
-                />
-         </div>
-         <div className="form-group">
+        <div className="form-group">
+          <label className="form-label">Username</label>
+          <input
+            className="form-input"
+            type="text"
+            name="username"
+            placeholder="Enter-userName"
+            value={input.username}
+            onChange={handleInput}
+          />
+        </div>
+        <div className="form-group">
           <label className="form-label">Email</label>
           <input
             className="form-input"
