@@ -24,7 +24,7 @@ function Collections() {
         setProduct(response.data);
         setFilter(response.data);
       })
-      .catch((err) => {
+      .catch((err) => { 
         console.error(err);
         toast.error("Failed to load products");
       });

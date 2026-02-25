@@ -1,0 +1,198 @@
+/* =============================================
+   STRIDE ADMIN — Login Page
+   Dark Bold Modern Theme (matches Layout.css)
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0d0d0d;
+  --card-bg: #161616;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #ff4d00;
+  --accent-hover: #ff6a2a;
+  --accent-glow: rgba(255, 77, 0, 0.3);
+  --text-primary: #ffffff;
+  --text-muted: #888;
+  --input-bg: #1e1e1e;
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-focus-border: rgba(255, 77, 0, 0.6);
+  --error-bg: rgba(255, 77, 0, 0.1);
+  --error-border: rgba(255, 77, 0, 0.35);
+  --error-color: #ff6a2a;
+  --transition: 0.2s ease;
+}
+
+/* ---- Full Page Wrapper ---- */
+.admin-login-container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+
+  /* Subtle radial glow behind the card */
+  background-image: radial-gradient(
+    ellipse 60% 50% at 50% 50%,
+    rgba(255, 77, 0, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* ---- Card ---- */
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 44px 40px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Top accent stripe */
+.admin-login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 16px 16px 0 0;
+}
+
+/* ---- Heading ---- */
+.admin-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.admin-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+/* ---- Form ---- */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Error Message ---- */
+.admin-error {
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-color);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 14px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+/* ---- Input Group ---- */
+.admin-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.admin-input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.admin-input-group input::placeholder {
+  color: #555;
+}
+
+.admin-input-group input:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.admin-input-group input:focus {
+  border-color: var(--input-focus-border);
+  background-color: #222;
+  box-shadow: 0 0 0 3px rgba(255, 77, 0, 0.1);
+}
+
+/* Autofill override */
+.admin-input-group input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #1e1e1e inset;
+  -webkit-text-fill-color: var(--text-primary);
+  caret-color: var(--text-primary);
+}
+
+/* ---- Submit Button ---- */
+.admin-login-btn {
+  width: 100%;
+  padding: 13px 20px;
+  margin-top: 4px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.admin-login-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 28px rgba(255, 77, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.admin-login-btn:active {
+  transform: translateY(0px);
+  box-shadow: 0 3px 12px var(--accent-glow);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 36px 24px 32px;
+    border-radius: 14px;
+  }
+
+  .admin-title {
+    font-size: 21px;
+  }
+}

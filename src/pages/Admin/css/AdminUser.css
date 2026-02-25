@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* ─── Variables ─── */
+:root {
+  --white:        #ffffff;
+  --off-white:    #faf9f7;
+  --cream:        #f5f2ee;
+  --cream-dark:   #ede9e3;
+  --border:       #e8e2d9;
+  --border-gold:  rgba(184, 147, 90, 0.25);
+  --gold:         #b8935a;
+  --gold-light:   #c9a96e;
+  --gold-dim:     rgba(184, 147, 90, 0.1);
+  --text-dark:    #1a1612;
+  --text-body:    #3d342a;
+  --text-muted:   #9e8e7e;
+  --text-soft:    #7a6e64;
+  --active-color: #4a9e6e;
+  --active-dim:   rgba(74, 158, 110, 0.08);
+  --block-color:  #c96e6e;
+  --block-dim:    rgba(201, 110, 110, 0.08);
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* ─── Page ─── */
+.admin-users-container {
+  padding: 48px 44px 80px;
+  background-color: var(--off-white);
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+}
+
+/* ─── Header ─── */
+.admin-users-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.admin-users-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ─── Title ─── */
+.admin-users-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dark);
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ─── Search ─── */
+.admin-users-search {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--text-dark);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding: 12px 18px;
+  width: 260px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-users-search::placeholder {
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.admin-users-search:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+}
+
+/* ─── Table Wrapper ─── */
+.admin-users-table-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+/* ─── Table ─── */
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Table Head ─── */
+.admin-users-table thead tr {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-users-table thead th {
+  padding: 14px 22px;
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* ─── Rows ─── */
+.admin-users-row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+  animation: rowIn 0.4s ease both;
+}
+
+.admin-users-row:nth-child(even) {
+  background: rgba(245, 242, 238, 0.5);
+}
+
+.admin-users-row:hover {
+  background: var(--cream);
+}
+
+.admin-users-row:last-child {
+  border-bottom: none;
+}
+
+@keyframes rowIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Cells ─── */
+.admin-users-table tbody td {
+  padding: 15px 22px;
+  color: var(--text-soft);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.admin-users-table tbody td:first-child {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.admin-users-table tbody td:nth-child(2) {
+  color: var(--text-dark);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.admin-users-table tbody td:nth-child(3) {
+  color: var(--text-soft);
+  font-size: 0.72rem;
+}
+
+/* ─── Status Badge ─── */
+.status-badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid;
+}
+
+.status-badge::before {
+  content: '● ';
+  font-size: 0.45rem;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.status-active {
+  color: var(--active-color);
+  border-color: rgba(74, 158, 110, 0.3);
+  background: var(--active-dim);
+}
+
+.status-blocked {
+  color: var(--block-color);
+  border-color: rgba(201, 110, 110, 0.3);
+  background: var(--block-dim);
+}
+
+/* ─── Action Buttons ─── */
+.btn-status {
+  background: transparent;
+  border: 1px solid;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-block {
+  border-color: rgba(201, 110, 110, 0.4);
+  color: var(--block-color);
+}
+
+.btn-block:hover {
+  background: var(--block-dim);
+  box-shadow: 0 2px 10px rgba(201, 110, 110, 0.12);
+}
+
+.btn-active {
+  border-color: rgba(74, 158, 110, 0.4);
+  color: var(--active-color);
+}
+
+.btn-active:hover {
+  background: var(--active-dim);
+  box-shadow: 0 2px 10px rgba(74, 158, 110, 0.12);
+}
+
+/* ─── Empty State ─── */
+.no-users {
+  padding: 72px 20px !important;
+  text-align: center;
+  color: var(--text-muted) !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.2rem !important;
+  font-style: italic;
+  font-weight: 300 !important;
+  letter-spacing: 0.08em !important;
+}
+
+.no-users::before {
+  content: '◇';
+  display: block;
+  font-size: 1.6rem;
+  color: var(--border);
+  margin-bottom: 12px;
+  font-style: normal;
+}
+
+/* ─── Scrollbar ─── */
+.admin-users-table-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+.admin-users-table-wrapper::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+.admin-users-table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--border-gold);
+}
+.admin-users-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .admin-users-container {
+    padding: 28px 16px 60px;
+  }
+
+  .admin-users-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-users-search {
+    width: 100%;
+  }
+
+  .admin-users-title {
+    font-size: 1.8rem;
+  }
+}

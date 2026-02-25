@@ -60,7 +60,7 @@ const CartPage = () => {
                         }
                         className="quantity-button"
                       >
-                        <Minus size={14} />
+                        <Minus size={8} />
                       </button>
 
                       <span className="quantity-display">
@@ -73,7 +73,7 @@ const CartPage = () => {
                         }
                         className="quantity-button"
                       >
-                        <Plus size={14} />
+                        <Plus size={8} />
                       </button>
                     </div>
 

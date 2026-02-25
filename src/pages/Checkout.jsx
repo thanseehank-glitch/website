@@ -71,7 +71,7 @@ const Checkout = () => {
         zip: "",
       });
 
-      alert("Order Placed Successfully ✅");
+      alert("Order Placed Successfully ");
       navigate("/checkout");
     } catch (error) {
       console.error(error);

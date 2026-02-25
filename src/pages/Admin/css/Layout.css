@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* ─── Variables ─── */
+:root {
+  --white:         #ffffff;
+  --off-white:     #faf9f7;
+  --cream:         #f5f2ee;
+  --cream-dark:    #ede9e3;
+  --border:        #e8e2d9;
+  --border-dark:   #d4cdc4;
+  --gold:          #b8935a;
+  --gold-light:    #c9a96e;
+  --gold-dim:      rgba(184, 147, 90, 0.12);
+  --gold-hover:    rgba(184, 147, 90, 0.08);
+  --text-dark:     #1a1612;
+  --text-body:     #3d342a;
+  --text-muted:    #9e8e7e;
+  --text-soft:     #7a6e64;
+  --sidebar-w:     260px;
+  --shadow-soft:   0 2px 20px rgba(0, 0, 0, 0.06);
+  --shadow-gold:   0 4px 24px rgba(184, 147, 90, 0.1);
+}
+
+/* ─── Reset ─── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Admin Container ─── */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--off-white);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ─── Sidebar ─── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ─── Sidebar Header ─── */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 24px 28px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.sidebar-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 24px;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--text-dark);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.brand-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+/* ─── Sidebar Nav ─── */
+.sidebar-nav {
+  flex: 1;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ─── Nav Links ─── */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+
+.nav-link svg {
+  flex-shrink: 0;
+  transition: color 0.25s ease;
+  stroke-width: 1.5;
+}
+
+.nav-link:hover {
+  color: var(--text-dark);
+  background: var(--cream);
+}
+
+/* Active state */
+.nav-link.active {
+  color: var(--gold);
+  background: var(--gold-dim);
+  border-color: rgba(184, 147, 90, 0.2);
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gold);
+}
+
+.nav-link.active svg {
+  color: var(--gold);
+}
+
+/* ─── Sidebar Footer ─── */
+.sidebar-footer {
+  padding: 20px 16px 28px;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── Logout Button ─── */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.logout-btn svg {
+  flex-shrink: 0;
+  stroke-width: 1.5;
+  transition: color 0.25s ease;
+}
+
+.logout-btn:hover {
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.05);
+  border-color: rgba(192, 57, 43, 0.2);
+}
+
+/* ─── Admin Content ─── */
+.admin-content {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-height: 100vh;
+  background-color: var(--off-white);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 72px;
+  }
+
+  .brand-name,
+  .nav-link span,
+  .logout-btn span {
+    display: none;
+  }
+
+  .sidebar-header {
+    justify-content: center;
+    padding: 24px 16px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sidebar-nav {
+    padding: 16px 10px;
+    align-items: center;
+  }
+
+  .nav-link {
+    justify-content: center;
+    padding: 14px;
+    width: 100%;
+  }
+
+  .sidebar-footer {
+    padding: 16px 10px;
+  }
+
+  .logout-btn {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .admin-content {
+    margin-left: 72px;
+  }
+}
