@@ -1,39 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables ─── */
+/* ─── Variables (same as dashboard & layout) ─── */
 :root {
-  --black:       #0a0a0a;
-  --deep:        #111111;
-  --surface:     #161616;
-  --card:        #131313;
-  --border:      #2a2a2a;
-  --border-gold: rgba(201, 169, 110, 0.3);
-  --gold:        #c9a96e;
-  --gold-light:  #e2c99a;
-  --gold-dim:    rgba(201, 169, 110, 0.12);
-  --text:        #e8e2d9;
-  --text-muted:  #7a7060;
-  --text-soft:   #b0a898;
-  --shadow-deep: 0 32px 100px rgba(0, 0, 0, 0.7);
-  --shadow-gold: 0 0 60px rgba(201, 169, 110, 0.07);
+  --white:        #ffffff;
+  --off-white:    #faf9f7;
+  --cream:        #f5f2ee;
+  --cream-dark:   #ede9e3;
+  --border:       #e8e2d9;
+  --border-gold:  rgba(184, 147, 90, 0.25);
+  --gold:         #b8935a;
+  --gold-light:   #c9a96e;
+  --gold-dim:     rgba(184, 147, 90, 0.1);
+  --text-dark:    #1a1612;
+  --text-body:    #3d342a;
+  --text-muted:   #9e8e7e;
+  --text-soft:    #7a6e64;
+  --shadow-soft:  0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ─── Page ─── */
+/* ─── Page — fits inside admin-content ─── */
 .edit-page {
   min-height: 100vh;
-  background-color: var(--black);
-  background-image:
-    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(201, 169, 110, 0.06) 0%, transparent 60%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 39px,
-      rgba(201, 169, 110, 0.025) 39px,
-      rgba(201, 169, 110, 0.025) 40px
-    );
-  padding: 60px 24px 100px;
+  background-color: var(--off-white);
+  padding: 52px 40px 80px;
   font-family: 'Montserrat', sans-serif;
-  color: var(--text);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -41,529 +32,253 @@
 
 /* ─── Card ─── */
 .edit-card {
-  background: var(--card);
+  background: var(--white);
   border: 1px solid var(--border);
-  border-top: 1px solid var(--gold);
+  border-top: 2px solid var(--gold);
+  box-shadow: var(--shadow-card);
   width: 100%;
-  max-width: 620px;
-  padding: 48px 48px 52px;
+  max-width: 560px;
   position: relative;
-  box-shadow: var(--shadow-deep), var(--shadow-gold);
-  animation: cardReveal 0.5s ease both;
+  overflow: hidden;
+  animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.edit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  pointer-events: none;
-}
-
-/* Decorative corner accents */
+/* Gold corner glow — same as stat-card */
 .edit-card::after {
   content: '';
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
-  border-bottom: 1px solid var(--border-gold);
-  border-right: 1px solid var(--border-gold);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at bottom right, var(--gold-dim) 0%, transparent 65%);
   pointer-events: none;
+  z-index: 0;
 }
 
-@keyframes cardReveal {
-  from { opacity: 0; transform: translateY(16px); }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ─── Title ─── */
 .edit-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
+  font-size: 1.95rem;
   font-weight: 300;
   font-style: italic;
-  color: var(--text);
+  color: var(--text-dark);
   letter-spacing: 0.02em;
-  margin: 0 0 10px;
-  line-height: 1;
+  margin: 0;
+  padding: 34px 36px 0;
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
 }
 
+/* "EDIT PRODUCT" tag + gold divider */
 .edit-title::after {
-  content: '';
+  content: 'EDIT PRODUCT';
   display: block;
-  width: 36px;
-  height: 1px;
-  background: var(--gold);
-  margin-top: 14px;
-  margin-bottom: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-top: 8px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
 }
 
 /* ─── Form ─── */
 .edit-form {
+  padding: 26px 36px 36px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ─── Form Group ─── */
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
+  animation: fieldIn 0.4s ease both;
 }
 
-/* ─── Label ─── */
-.form-label {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
+.form-group:nth-child(1) { animation-delay: 0.08s; }
+.form-group:nth-child(2) { animation-delay: 0.13s; }
+.form-group:nth-child(3) { animation-delay: 0.18s; }
+.form-group:nth-child(4) { animation-delay: 0.23s; }
+.form-group:nth-child(5) { animation-delay: 0.28s; }
 
-/* ─── Input ─── */
-.form-input,
-.form-textarea {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 0;
-  color: var(--text);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  padding: 13px 16px;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  font-size: 0.75rem;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  border-color: var(--gold);
-  background: rgba(201, 169, 110, 0.03);
-  box-shadow: 0 0 0 1px var(--gold-dim), inset 0 0 20px rgba(201, 169, 110, 0.03);
-}
-
-/* Number input — remove spinner */
-.form-input[type="number"]::-webkit-inner-spin-button,
-.form-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* ─── Textarea ─── */
-.form-textarea {
-  resize: vertical;
-  min-height: 110px;
-  line-height: 1.7;
-}
-
-/* ─── Sizes ─── */
-.sizes-container {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.size-item {
-  cursor: pointer;
-  position: relative;
-}
-
-.size-checkbox {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-}
-
-.size-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-  user-select: none;
-}
-
-.size-item:hover .size-label {
-  border-color: var(--border-gold);
-  color: var(--text-soft);
-}
-
-.size-checkbox:checked + .size-label {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: var(--gold-dim);
-  box-shadow: 0 0 12px rgba(201, 169, 110, 0.15);
-}
-
-/* ─── Submit Button ─── */
-.update-btn {
-  background: transparent;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  padding: 16px 32px;
-  margin-top: 8px;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.35s ease;
-  width: 100%;
-}
-
-.update-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gold);
-  transform: translateY(100%);
-  transition: transform 0.35s ease;
-  z-index: 0;
-}
-
-.update-btn span {
-  position: relative;
-  z-index: 1;
-}
-
-.update-btn:hover {
-  color: var(--black);
-}
-
-.update-btn:hover::before {
-  transform: translateY(0);
-}
-
-/* ─── Responsive ─── */
-@media (max-width: 680px) {
-  .edit-page {
-    padding: 32px 16px 80px;
-  }
-
-  .edit-card {
-    padding: 32px 24px 36px;
-  }
-
-  .edit-title {
-    font-size: 1.8rem;
-  }
-
-  .size-label {
-    width: 40px;
-    height: 40px;
-  }
-}@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
-
-/* ─── Variables ─── */
-:root {
-  --black:       #0a0a0a;
-  --deep:        #111111;
-  --surface:     #161616;
-  --card:        #131313;
-  --border:      #2a2a2a;
-  --border-gold: rgba(201, 169, 110, 0.3);
-  --gold:        #c9a96e;
-  --gold-light:  #e2c99a;
-  --gold-dim:    rgba(201, 169, 110, 0.12);
-  --text:        #e8e2d9;
-  --text-muted:  #7a7060;
-  --text-soft:   #b0a898;
-  --shadow-deep: 0 32px 100px rgba(0, 0, 0, 0.7);
-  --shadow-gold: 0 0 60px rgba(201, 169, 110, 0.07);
-}
-
-/* ─── Page ─── */
-.edit-page {
-  min-height: 100vh;
-  background-color: var(--black);
-  background-image:
-    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(201, 169, 110, 0.06) 0%, transparent 60%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 39px,
-      rgba(201, 169, 110, 0.025) 39px,
-      rgba(201, 169, 110, 0.025) 40px
-    );
-  padding: 60px 24px 100px;
-  font-family: 'Montserrat', sans-serif;
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* ─── Card ─── */
-.edit-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-top: 1px solid var(--gold);
-  width: 100%;
-  max-width: 620px;
-  padding: 48px 48px 52px;
-  position: relative;
-  box-shadow: var(--shadow-deep), var(--shadow-gold);
-  animation: cardReveal 0.5s ease both;
-}
-
-.edit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  pointer-events: none;
-}
-
-/* Decorative corner accents */
-.edit-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border-bottom: 1px solid var(--border-gold);
-  border-right: 1px solid var(--border-gold);
-  pointer-events: none;
-}
-
-@keyframes cardReveal {
-  from { opacity: 0; transform: translateY(16px); }
+@keyframes fieldIn {
+  from { opacity: 0; transform: translateY(7px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Title ─── */
-.edit-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--text);
-  letter-spacing: 0.02em;
-  margin: 0 0 10px;
-  line-height: 1;
-}
-
-.edit-title::after {
-  content: '';
-  display: block;
-  width: 36px;
-  height: 1px;
-  background: var(--gold);
-  margin-top: 14px;
-  margin-bottom: 36px;
-}
-
-/* ─── Form ─── */
-.edit-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* ─── Form Group ─── */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 /* ─── Label ─── */
 .form-label {
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Gold dot — matches dashboard section markers */
+.form-label::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 /* ─── Input ─── */
-.form-input,
-.form-textarea {
-  background: var(--surface);
+.form-input {
+  background: var(--off-white);
   border: 1px solid var(--border);
-  border-radius: 0;
-  color: var(--text);
+  border-left: 2px solid transparent;
+  padding: 11px 16px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 400;
-  letter-spacing: 0.05em;
-  padding: 13px 16px;
+  letter-spacing: 0.04em;
+  color: var(--text-body);
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   width: 100%;
   box-sizing: border-box;
+  transition: border-color 0.3s ease,
+              border-left-color 0.3s ease,
+              box-shadow 0.3s ease,
+              background 0.3s ease;
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
+.form-input::placeholder {
   color: var(--text-muted);
-  letter-spacing: 0.06em;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
 }
 
-.form-input:focus,
-.form-textarea:focus {
-  border-color: var(--gold);
-  background: rgba(201, 169, 110, 0.03);
-  box-shadow: 0 0 0 1px var(--gold-dim), inset 0 0 20px rgba(201, 169, 110, 0.03);
+.form-input:focus {
+  border-color: var(--border-gold);
+  border-left-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-/* Number input — remove spinner */
 .form-input[type="number"]::-webkit-inner-spin-button,
 .form-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+  opacity: 0.35;
 }
 
 /* ─── Textarea ─── */
 .form-textarea {
-  resize: vertical;
-  min-height: 110px;
-  line-height: 1.7;
-}
-
-/* ─── Sizes ─── */
-.sizes-container {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.size-item {
-  cursor: pointer;
-  position: relative;
-}
-
-.size-checkbox {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  pointer-events: none;
-}
-
-.size-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 46px;
-  height: 46px;
-  background: var(--surface);
+  background: var(--off-white);
   border: 1px solid var(--border);
-  color: var(--text-muted);
+  border-left: 2px solid transparent;
+  padding: 11px 16px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-body);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.75;
+  transition: border-color 0.3s ease,
+              border-left-color 0.3s ease,
+              box-shadow 0.3s ease,
+              background 0.3s ease;
+}
+
+.form-textarea::placeholder {
+  color: var(--text-muted);
   font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-  user-select: none;
 }
 
-.size-item:hover .size-label {
+.form-textarea:focus {
   border-color: var(--border-gold);
-  color: var(--text-soft);
+  border-left-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-.size-checkbox:checked + .size-label {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: var(--gold-dim);
-  box-shadow: 0 0 12px rgba(201, 169, 110, 0.15);
-}
-
-/* ─── Submit Button ─── */
+/* ─── Update Button ─── */
 .update-btn {
+  width: 100%;
   background: transparent;
   border: 1px solid var(--gold);
   color: var(--gold);
-  cursor: pointer;
+  padding: 13px 28px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.63rem;
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  padding: 16px 32px;
-  margin-top: 8px;
+  cursor: pointer;
+  margin-top: 6px;
   position: relative;
   overflow: hidden;
-  transition: color 0.35s ease;
-  width: 100%;
+  transition: color 0.35s ease, box-shadow 0.35s ease;
+  animation: fieldIn 0.4s ease 0.33s both;
 }
 
+/* Gold sweep — same as all admin buttons */
 .update-btn::before {
   content: '';
   position: absolute;
   inset: 0;
   background: var(--gold);
-  transform: translateY(100%);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.35s ease;
   z-index: 0;
 }
 
-.update-btn span {
+.update-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.update-btn:hover {
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(184, 147, 90, 0.28);
+}
+
+.update-btn:active {
+  transform: scale(0.99);
+}
+
+/* keep text above sweep layer */
+.update-btn > * {
   position: relative;
   z-index: 1;
 }
 
-.update-btn:hover {
-  color: var(--black);
-}
-
-.update-btn:hover::before {
-  transform: translateY(0);
-}
-
 /* ─── Responsive ─── */
-@media (max-width: 680px) {
+@media (max-width: 600px) {
   .edit-page {
-    padding: 32px 16px 80px;
-  }
-
-  .edit-card {
-    padding: 32px 24px 36px;
+    padding: 32px 16px 60px;
   }
 
   .edit-title {
-    font-size: 1.8rem;
+    padding: 26px 22px 0;
+    font-size: 1.65rem;
   }
 
-  .size-label {
-    width: 40px;
-    height: 40px;
+  .edit-form {
+    padding: 20px 22px 28px;
+    gap: 16px;
   }
 }

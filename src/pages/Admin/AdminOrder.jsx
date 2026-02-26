@@ -23,7 +23,7 @@ function AdminOrders() {
   }
 
   const Orders = order.filter(order =>
-    order.shippingDetails.fullName.toLowerCase().includes(search.toLowerCase())
+    order.customer.fullName.toLowerCase().includes(search.toLowerCase())
   )
 
   return (
@@ -59,16 +59,16 @@ function AdminOrders() {
               Orders.map((order) => (
                 <tr className="orders-row" key={order.id}>
                   <td className="orders-cell">
-                    {order.shippingDetails.fullName}
+                    {order.customer.fullName}
                   </td>
                   <td className="orders-cell">
-                    {order.shippingDetails.phone}
+                    {order.customer.phone}
                   </td>
                   <td className="orders-cell">
-                    {order.shippingDetails.city}
+                    {order.customer.city}
                   </td>
                   <td className="orders-cell total-amount">
-                    ₹{order.totalAmount}
+                    ₹{order.total}
                   </td>
                   <td className="orders-cell payment-method">
                     {order.payment}

@@ -26,7 +26,7 @@ function AdminDashboard() {
   const Users = user.filter((item) => item.role !== "admin");
 
 
-  const totalRevenue = order.reduce((acc, item) => acc + item.totalAmount, 0);
+  const totalRevenue = order.reduce((acc, item) => acc + item.total, 0);
 
 
   const recentOrders = [...order].reverse().slice(0, 5);
@@ -73,9 +73,9 @@ function AdminDashboard() {
                 <tr key={ord.id}>
                   <td>{ord.id}</td>
                   <td>
-                    <strong>{ord.shippingDetails.fullName}</strong>
+                    <strong>{ord.customer.fullName}</strong>
                     <br />
-                    <small>{ord.shippingDetails.city}</small>
+                    <small>{ord.customer.city}</small>
                   </td>
                   <td>{ord.orderDate}</td>
                   <td>{ord.payment}</td>

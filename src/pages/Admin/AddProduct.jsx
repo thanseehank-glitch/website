@@ -52,7 +52,7 @@ function AddProduct() {
               className="form-input"
               type="text"
               name="brand"
-              placeholder="e.g. Nike"
+              placeholder="e.g. Rollex"
               value={product.brand}
               onChange={handilChange}
             />
@@ -64,7 +64,7 @@ function AddProduct() {
               className="form-input"
               type="text"
               name="name"
-              placeholder="e.g. Air Jordan 1"
+              placeholder="e.g.Land-Dweller 36"
               value={product.name}
               onChange={handilChange}
             />
@@ -88,7 +88,7 @@ function AddProduct() {
             <textarea
               className="form-textarea"
               name="description"
-              placeholder="Write something about this sneaker..."
+              placeholder="Write something about this Watch..."
               value={product.description}
               onChange={handilChange}
             />

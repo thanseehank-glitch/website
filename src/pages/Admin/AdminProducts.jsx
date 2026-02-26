@@ -57,21 +57,21 @@ function AdminProducts() {
         {FilterProduct.map((item) => (
           <div key={item.id} className="admin-product-card">
 
-            <div className="product-image-wrapper">
+            <div className="admin-image-wrapper">
               <img
                 src={item.image}
                 alt={item.name}
-                className="product-image"
+                className="admin-image"
               />
             </div>
 
-            <div className="product-info">
-              <h3 className="product-name">{item.name}</h3>
-              <p className="product-price">₹{item.price}</p>
-              <p className="product-brand"> Brand: <span>{item.brand}</span></p>
+            <div className="admin-info">
+              <h3 className="admin-name">{item.name}</h3>
+              <p className="admin-price">₹{item.price}</p>
+              <p className="admin-brand"> Brand: <span>{item.brand}</span></p>
             </div>
 
-            <div className="product-actions">
+            <div className="admin-actions">
               <button
                 className="edit-btn"
                 onClick={() => navigate(`/adminpanel/editproduct/${item.id}`)}

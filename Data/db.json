@@ -14,6 +14,14 @@
       "password": "thanseeha1234",
       "role": "user",
       "status": "active"
+    },
+    {
+      "id": "f45b",
+      "username": "Thanseeha_Nargees",
+      "email": "thanseehank@gmail.com",
+      "password": "1234567890",
+      "role": "user",
+      "status": "active"
     }
   ],
   "products": [
@@ -131,5 +139,89 @@
     }
   ],
   "cart": [],
-  "order": []
+  "order": [
+    {
+      "id": "b084",
+      "userId": "f45b",
+      "customer": {
+        "fullName": "thanseeha nargees",
+        "email": "thanseehank@gmail.com",
+        "phone": "8943430476",
+        "address": "pathappiryam po,edavanna,manjeri",
+        "city": "manjeri",
+        "state": "kerala",
+        "zip": "676123"
+      },
+      "items": [
+        {
+          "id": "233f",
+          "userId": "f45b",
+          "productId": "2",
+          "name": "Oyster Perpetual 31",
+          "price": 5850000,
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m277200-0017",
+          "quantity": 1
+        },
+        {
+          "id": "b224",
+          "userId": "f45b",
+          "productId": "8",
+          "name": "Carlie",
+          "price": 20000,
+          "image": "https://fossil.scene7.com/is/image/FossilPartners/ES5378SET_main?$sfcc_fos_hi-res$",
+          "quantity": 1
+        },
+        {
+          "id": "712b",
+          "userId": "f45b",
+          "productId": "12",
+          "name": "Tissot Lovely Round",
+          "price": 65000,
+          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dweefbbc08/product-pictures/b043dcfc-f369-4bfa-86c3-c43be5aa97e3_T140-009-61-116-00_Shadow.png?sm=fit&sw=1680&sh=1680,gravity=center",
+          "quantity": 1
+        },
+        {
+          "id": "7cf1",
+          "userId": "f45b",
+          "productId": "13",
+          "name": "Golde ellipse",
+          "price": 6100000,
+          "image": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/202220-51891",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 12035000,
+      "total": 12035000,
+      "status": "Confirmed",
+      "createdAt": "2026-02-26T04:40:05.509Z"
+    },
+    {
+      "id": "d062",
+      "userId": "f45b",
+      "customer": {
+        "fullName": "thansi",
+        "email": "thanseehank@gmail.com",
+        "phone": "8943430476",
+        "address": "edavannna",
+        "city": "manjeri",
+        "state": "kerala",
+        "zip": "676123"
+      },
+      "items": [
+        {
+          "id": "abe4",
+          "userId": "f45b",
+          "productId": "2",
+          "name": "Oyster Perpetual 31",
+          "price": 5850000,
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m277200-0017",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 5850000,
+      "total": 5850000,
+      "status": "Pending",
+      "createdAt": "2026-02-26T05:00:38.252Z"
+    }
+  ]
 }

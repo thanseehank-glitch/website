@@ -1,198 +1,239 @@
-/* =============================================
-   STRIDE ADMIN — Login Page
-   Dark Bold Modern Theme (matches Layout.css)
-   ============================================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ─── Variables (same as dashboard) ─── */
 :root {
-  --bg: #0d0d0d;
-  --card-bg: #161616;
-  --border: rgba(255, 255, 255, 0.08);
-  --accent: #ff4d00;
-  --accent-hover: #ff6a2a;
-  --accent-glow: rgba(255, 77, 0, 0.3);
-  --text-primary: #ffffff;
-  --text-muted: #888;
-  --input-bg: #1e1e1e;
-  --input-border: rgba(255, 255, 255, 0.1);
-  --input-focus-border: rgba(255, 77, 0, 0.6);
-  --error-bg: rgba(255, 77, 0, 0.1);
-  --error-border: rgba(255, 77, 0, 0.35);
-  --error-color: #ff6a2a;
-  --transition: 0.2s ease;
+  --white:        #ffffff;
+  --off-white:    #faf9f7;
+  --cream:        #f5f2ee;
+  --cream-dark:   #ede9e3;
+  --border:       #e8e2d9;
+  --border-gold:  rgba(184, 147, 90, 0.25);
+  --gold:         #b8935a;
+  --gold-light:   #c9a96e;
+  --gold-dim:     rgba(184, 147, 90, 0.1);
+  --text-dark:    #1a1612;
+  --text-body:    #3d342a;
+  --text-muted:   #9e8e7e;
+  --text-soft:    #7a6e64;
+  --shadow-soft:  0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ---- Full Page Wrapper ---- */
+/* ─── Full Page Container ─── */
 .admin-login-container {
   min-height: 100vh;
-  width: 100vw;
-  background-color: var(--bg);
+  background-color: var(--off-white);
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(184, 147, 90, 0.08) 0%, transparent 60%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-
-  /* Subtle radial glow behind the card */
-  background-image: radial-gradient(
-    ellipse 60% 50% at 50% 50%,
-    rgba(255, 77, 0, 0.06) 0%,
-    transparent 70%
-  );
+  font-family: 'Montserrat', sans-serif;
+  padding: 40px 20px;
 }
 
-/* ---- Card ---- */
+/* ─── Login Card ─── */
 .admin-login-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  box-shadow: var(--shadow-card);
+  padding: 52px 48px 48px;
   width: 100%;
   max-width: 420px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 44px 40px 40px;
   position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.03),
-    0 24px 60px rgba(0, 0, 0, 0.6);
+  animation: cardIn 0.5s ease both;
 }
 
-/* Top accent stripe */
-.admin-login-card::before {
+/* Gold glow corner — same as stat-card */
+.admin-login-card::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  border-radius: 16px 16px 0 0;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at bottom right, var(--gold-dim) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-/* ---- Heading ---- */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Brand Mark ─── */
+.admin-login-card::before {
+  content: 'ZIVORA';
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* ─── Title ─── */
 .admin-title {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: -0.3px;
-  margin-bottom: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dark);
+  letter-spacing: 0.02em;
+  margin: 0 0 8px;
+  text-align: center;
+  line-height: 1.2;
 }
 
+/* ─── Subtitle ─── */
 .admin-subtitle {
-  font-size: 14px;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
   color: var(--text-muted);
-  margin-bottom: 32px;
+  text-align: center;
+  margin: 0 0 36px;
+  text-transform: uppercase;
 }
 
-/* ---- Form ---- */
+/* Gold divider under subtitle */
+.admin-subtitle::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+  margin: 14px auto 0;
+}
+
+/* ─── Form ─── */
 .admin-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* ---- Error Message ---- */
-.admin-error {
-  background-color: var(--error-bg);
-  border: 1px solid var(--error-border);
-  color: var(--error-color);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 11px 14px;
-  border-radius: 8px;
-  margin-bottom: 4px;
-}
-
-/* ---- Input Group ---- */
+/* ─── Input Group ─── */
 .admin-input-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
 }
 
 .admin-input-group label {
-  font-size: 13px;
+  font-size: 0.6rem;
   font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.4px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: var(--text-soft);
 }
 
 .admin-input-group input {
-  width: 100%;
+  background: var(--off-white);
+  border: 1px solid var(--border);
   padding: 12px 16px;
-  background-color: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 10px;
-  color: var(--text-primary);
-  font-size: 14px;
-  font-family: inherit;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-body);
   outline: none;
-  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .admin-input-group input::placeholder {
-  color: #555;
-}
-
-.admin-input-group input:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  font-size: 0.72rem;
 }
 
 .admin-input-group input:focus {
-  border-color: var(--input-focus-border);
-  background-color: #222;
-  box-shadow: 0 0 0 3px rgba(255, 77, 0, 0.1);
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-/* Autofill override */
-.admin-input-group input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #1e1e1e inset;
-  -webkit-text-fill-color: var(--text-primary);
-  caret-color: var(--text-primary);
+/* ─── Error Message ─── */
+.admin-error {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #c96e6e;
+  background: rgba(201, 110, 110, 0.07);
+  border: 1px solid rgba(201, 110, 110, 0.2);
+  padding: 10px 14px;
+  margin: 0;
+  text-align: center;
+  animation: shake 0.35s ease;
 }
 
-/* ---- Submit Button ---- */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%       { transform: translateX(-6px); }
+  75%       { transform: translateX(6px); }
+}
+
+/* ─── Submit Button ─── */
 .admin-login-btn {
   width: 100%;
-  padding: 13px 20px;
-  margin-top: 4px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  font-family: inherit;
-  letter-spacing: 0.3px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 13px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
-  box-shadow: 0 4px 20px var(--accent-glow);
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-login-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.admin-login-btn:hover::before {
+  transform: scaleX(1);
 }
 
 .admin-login-btn:hover {
-  background: var(--accent-hover);
-  box-shadow: 0 6px 28px rgba(255, 77, 0, 0.45);
-  transform: translateY(-1px);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(184, 147, 90, 0.3);
 }
 
-.admin-login-btn:active {
-  transform: translateY(0px);
-  box-shadow: 0 3px 12px var(--accent-glow);
+/* Keep text above the sliding fill */
+.admin-login-btn span {
+  position: relative;
+  z-index: 1;
 }
 
-/* ---- Responsive ---- */
+.admin-login-btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 480px) {
   .admin-login-card {
-    padding: 36px 24px 32px;
-    border-radius: 14px;
+    padding: 40px 28px 36px;
   }
 
   .admin-title {
-    font-size: 21px;
+    font-size: 1.7rem;
   }
 }

@@ -36,7 +36,9 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* ─── Sidebar ─── */
+/* ══════════════════════════════
+   SIDEBAR
+══════════════════════════════ */
 .sidebar {
   width: var(--sidebar-w);
   min-height: 100vh;
@@ -56,12 +58,13 @@
 .sidebar-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   padding: 32px 24px 28px;
   border-bottom: 1px solid var(--border);
   position: relative;
 }
 
+/* Gold accent line — matches dashboard */
 .sidebar-header::after {
   content: '';
   position: absolute;
@@ -72,16 +75,17 @@
   background: var(--gold);
 }
 
+/* Z logo box */
 .logo-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   background: var(--text-dark);
   color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 500;
   font-style: italic;
   flex-shrink: 0;
@@ -90,9 +94,9 @@
 
 .brand-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.3em;
   color: var(--text-dark);
   line-height: 1;
 }
@@ -100,10 +104,10 @@
 /* ─── Sidebar Nav ─── */
 .sidebar-nav {
   flex: 1;
-  padding: 20px 16px;
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 /* ─── Nav Links ─── */
@@ -111,15 +115,16 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
+  padding: 11px 14px;
   text-decoration: none;
   color: var(--text-muted);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   border: 1px solid transparent;
-  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease, background 0.25s ease,
+              border-color 0.25s ease;
   position: relative;
 }
 
@@ -127,6 +132,7 @@
   flex-shrink: 0;
   transition: color 0.25s ease;
   stroke-width: 1.5;
+  opacity: 0.7;
 }
 
 .nav-link:hover {
@@ -134,13 +140,18 @@
   background: var(--cream);
 }
 
-/* Active state */
+.nav-link:hover svg {
+  opacity: 1;
+}
+
+/* ─── Active state ─── */
 .nav-link.active {
   color: var(--gold);
   background: var(--gold-dim);
   border-color: rgba(184, 147, 90, 0.2);
 }
 
+/* Left gold bar on active */
 .nav-link.active::before {
   content: '';
   position: absolute;
@@ -153,11 +164,12 @@
 
 .nav-link.active svg {
   color: var(--gold);
+  opacity: 1;
 }
 
 /* ─── Sidebar Footer ─── */
 .sidebar-footer {
-  padding: 20px 16px 28px;
+  padding: 20px 16px 32px;
   border-top: 1px solid var(--border);
 }
 
@@ -167,32 +179,41 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 12px 14px;
+  padding: 11px 14px;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text-muted);
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease, background 0.25s ease,
+              border-color 0.25s ease;
 }
 
 .logout-btn svg {
   flex-shrink: 0;
   stroke-width: 1.5;
-  transition: color 0.25s ease;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
 }
 
 .logout-btn:hover {
   color: #c0392b;
   background: rgba(192, 57, 43, 0.05);
-  border-color: rgba(192, 57, 43, 0.2);
+  border-color: rgba(192, 57, 43, 0.22);
 }
 
-/* ─── Admin Content ─── */
+.logout-btn:hover svg {
+  opacity: 1;
+  color: #c0392b;
+}
+
+/* ══════════════════════════════
+   MAIN CONTENT
+══════════════════════════════ */
 .admin-content {
   margin-left: var(--sidebar-w);
   flex: 1;
@@ -200,10 +221,12 @@
   background-color: var(--off-white);
 }
 
-/* ─── Responsive ─── */
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 72px;
+  :root {
+    --sidebar-w: 72px;
   }
 
   .brand-name,
@@ -215,6 +238,11 @@
   .sidebar-header {
     justify-content: center;
     padding: 24px 16px;
+  }
+
+  .sidebar-header::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .logo-icon {
@@ -233,16 +261,21 @@
     width: 100%;
   }
 
+  .nav-link.active::before {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+  }
+
   .sidebar-footer {
-    padding: 16px 10px;
+    padding: 16px 10px 24px;
   }
 
   .logout-btn {
     justify-content: center;
     padding: 14px;
-  }
-
-  .admin-content {
-    margin-left: 72px;
   }
 }

@@ -1,54 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── CSS Variables ─── */
+/* ─── Variables (same as dashboard) ─── */
 :root {
-  --black:       #0a0a0a;
-  --deep:        #111111;
-  --surface:     #161616;
-  --card:        #141414;
-  --border:      #2a2a2a;
-  --border-gold: rgba(201, 169, 110, 0.3);
-  --gold:        #c9a96e;
-  --gold-light:  #e2c99a;
-  --gold-dim:    rgba(201, 169, 110, 0.15);
-  --text:        #e8e2d9;
-  --text-muted:  #7a7060;
-  --text-soft:   #b0a898;
-  --danger:      #c96e6e;
-  --danger-dim:  rgba(201, 110, 110, 0.12);
-  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-gold: 0 0 30px rgba(201, 169, 110, 0.06);
+  --white:        #ffffff;
+  --off-white:    #faf9f7;
+  --cream:        #f5f2ee;
+  --cream-dark:   #ede9e3;
+  --border:       #e8e2d9;
+  --border-gold:  rgba(184, 147, 90, 0.25);
+  --gold:         #b8935a;
+  --gold-light:   #c9a96e;
+  --gold-dim:     rgba(184, 147, 90, 0.1);
+  --text-dark:    #1a1612;
+  --text-body:    #3d342a;
+  --text-muted:   #9e8e7e;
+  --text-soft:    #7a6e64;
+  --shadow-soft:  0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
 /* ─── Page ─── */
 .admin-products-page {
+  padding: 48px 44px 80px;
+  background-color: var(--off-white);
   min-height: 100vh;
-  background-color: var(--black);
-  background-image:
-    radial-gradient(ellipse 80% 35% at 50% 0%, rgba(201, 169, 110, 0.05) 0%, transparent 60%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 39px,
-      rgba(201, 169, 110, 0.025) 39px,
-      rgba(201, 169, 110, 0.025) 40px
-    );
-  padding: 48px 40px 80px;
   font-family: 'Montserrat', sans-serif;
-  color: var(--text);
+  color: var(--text-dark);
 }
 
 /* ─── Header ─── */
 .admin-products-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 44px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--border-gold);
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
   position: relative;
+  flex-wrap: wrap;
 }
 
 .admin-products-header::after {
@@ -56,17 +45,17 @@
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 80px;
+  width: 40px;
   height: 1px;
   background: var(--gold);
 }
 
 .admin-products-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 300;
   font-style: italic;
-  color: var(--text);
+  color: var(--text-dark);
   letter-spacing: 0.02em;
   margin: 0;
   line-height: 1;
@@ -74,47 +63,54 @@
 }
 
 /* ─── Search Bar ─── */
+.search-bar {
+  flex: 1;
+  min-width: 200px;
+  max-width: 340px;
+}
+
 .search-bar input {
-  background: var(--surface);
+  width: 100%;
+  background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 0;
-  color: var(--text);
+  padding: 10px 18px;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 0.12em;
-  padding: 12px 20px;
-  width: 280px;
+  letter-spacing: 0.07em;
+  color: var(--text-body);
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
 }
 
 .search-bar input::placeholder {
   color: var(--text-muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .search-bar input:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 1px var(--gold-dim), inset 0 0 20px rgba(201, 169, 110, 0.04);
+  box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
 /* ─── Add Product Button ─── */
 .add-product-btn {
+  margin-left: auto;
   background: transparent;
   border: 1px solid var(--gold);
   color: var(--gold);
-  cursor: pointer;
+  padding: 10px 28px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  transition: color 0.3s ease, background 0.3s ease;
-  flex-shrink: 0;
 }
 
 .add-product-btn::before {
@@ -122,133 +118,121 @@
   position: absolute;
   inset: 0;
   background: var(--gold);
-  transform: translateX(-100%);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
   z-index: 0;
 }
 
-.add-product-btn:hover {
-  color: var(--black);
-}
-
 .add-product-btn:hover::before {
-  transform: translateX(0);
+  transform: scaleX(1);
 }
 
-.add-product-btn span,
-.add-product-btn {
-  position: relative;
-  z-index: 1;
+.add-product-btn:hover {
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(184, 147, 90, 0.25);
 }
 
 /* ─── Products Grid ─── */
 .admin-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
 }
 
 /* ─── Product Card ─── */
 .admin-product-card {
-  background: var(--card);
+  background: var(--white);
   border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  animation: cardIn 0.5s ease both;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  animation: cardIn 0.5s ease both;
 }
 
-.admin-product-card::before {
+/* Gold glow corner — matches stat-card::after */
+.admin-product-card::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at bottom right, var(--gold-dim) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .admin-product-card:hover {
-  border-color: var(--border-gold);
-  box-shadow: var(--shadow-card), var(--shadow-gold);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.admin-product-card:hover::before {
-  opacity: 1;
-}
+.admin-product-card:nth-child(1) { animation-delay: 0.05s; }
+.admin-product-card:nth-child(2) { animation-delay: 0.10s; }
+.admin-product-card:nth-child(3) { animation-delay: 0.15s; }
+.admin-product-card:nth-child(4) { animation-delay: 0.20s; }
+.admin-product-card:nth-child(5) { animation-delay: 0.25s; }
+.admin-product-card:nth-child(6) { animation-delay: 0.30s; }
 
 @keyframes cardIn {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Product Image ─── */
-.product-image-wrapper {
+/* ─── Image ─── */
+.admin-image-wrapper {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: var(--deep);
-  position: relative;
+  background: var(--cream);
 }
 
-.product-image-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.4) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.product-image {
+.admin-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s ease;
-  filter: brightness(0.9);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.admin-product-card:hover .product-image {
+.admin-product-card:hover .admin-image {
   transform: scale(1.05);
-  filter: brightness(1);
 }
 
-/* ─── Product Info ─── */
-.product-info {
-  padding: 18px 18px 12px;
+/* ─── Info ─── */
+.admin-info {
+  padding: 18px 20px 14px;
   flex: 1;
   border-bottom: 1px solid var(--border);
 }
 
-.product-name {
+.admin-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   font-weight: 400;
-  color: var(--text);
+  font-style: italic;
   letter-spacing: 0.03em;
+  color: var(--text-dark);
   margin: 0 0 8px;
   line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.product-price {
+/* Price matches dashboard amount style */
+.admin-price {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  color: var(--gold-light);
+  color: var(--gold);
   letter-spacing: 0.04em;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
-.product-brand {
-  font-size: 0.65rem;
+.admin-brand {
+  font-size: 0.62rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -256,52 +240,53 @@
   margin: 0;
 }
 
-.product-brand span {
+.admin-brand span {
   color: var(--text-soft);
 }
 
-/* ─── Product Actions ─── */
-.product-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+/* ─── Action Buttons ─── */
+.admin-actions {
+  display: flex;
 }
 
 .edit-btn,
 .delete-btn-edit {
-  background: transparent;
+  flex: 1;
+  padding: 12px 10px;
   border: none;
-  cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 14px 10px;
+  cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease;
+  outline: none;
 }
 
 .edit-btn {
+  background: var(--gold-dim);
   color: var(--gold);
   border-right: 1px solid var(--border);
 }
 
 .edit-btn:hover {
-  background: var(--gold-dim);
-  color: var(--gold-light);
+  background: var(--gold);
+  color: var(--white);
 }
 
 .delete-btn-edit {
-  color: var(--text-muted);
+  background: rgba(201, 110, 110, 0.07);
+  color: #c96e6e;
 }
 
 .delete-btn-edit:hover {
-  background: var(--danger-dim);
-  color: var(--danger);
+  background: #c96e6e;
+  color: var(--white);
 }
 
 /* ─── Responsive ─── */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .admin-products-page {
     padding: 28px 16px 60px;
   }
@@ -309,30 +294,21 @@
   .admin-products-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 14px;
   }
 
-  .search-bar input {
+  .search-bar {
     width: 100%;
+    max-width: 100%;
   }
 
   .add-product-btn {
+    margin-left: 0;
     width: 100%;
-    text-align: center;
   }
 
   .admin-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .admin-products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .admin-products-title {
-    font-size: 1.9rem;
   }
 }
