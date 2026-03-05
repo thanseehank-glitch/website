@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables (same as dashboard & layout) ─── */
 :root {
   --white:        #ffffff;
   --off-white:    #faf9f7;
@@ -19,7 +18,7 @@
   --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ─── Page — fits inside admin-content ─── */
+
 .edit-page {
   min-height: 100vh;
   background-color: var(--off-white);
@@ -30,7 +29,7 @@
   align-items: flex-start;
 }
 
-/* ─── Card ─── */
+
 .edit-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -43,7 +42,6 @@
   animation: cardIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Gold corner glow — same as stat-card */
 .edit-card::after {
   content: '';
   position: absolute;
@@ -61,7 +59,7 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Title ─── */
+
 .edit-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.95rem;
@@ -76,7 +74,7 @@
   z-index: 1;
 }
 
-/* "EDIT PRODUCT" tag + gold divider */
+
 .edit-title::after {
   content: 'EDIT PRODUCT';
   display: block;
@@ -91,7 +89,7 @@
   border-bottom: 1px solid var(--border);
 }
 
-/* ─── Form ─── */
+
 .edit-form {
   padding: 26px 36px 36px;
   display: flex;
@@ -101,7 +99,7 @@
   z-index: 1;
 }
 
-/* ─── Form Group ─── */
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -120,7 +118,7 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Label ─── */
+
 .form-label {
   font-size: 0.58rem;
   font-weight: 600;
@@ -132,7 +130,7 @@
   gap: 8px;
 }
 
-/* Gold dot — matches dashboard section markers */
+
 .form-label::before {
   content: '';
   display: inline-block;
@@ -143,7 +141,6 @@
   flex-shrink: 0;
 }
 
-/* ─── Input ─── */
 .form-input {
   background: var(--off-white);
   border: 1px solid var(--border);
@@ -180,7 +177,6 @@
   opacity: 0.35;
 }
 
-/* ─── Textarea ─── */
 .form-textarea {
   background: var(--off-white);
   border: 1px solid var(--border);
@@ -215,7 +211,7 @@
   box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-/* ─── Update Button ─── */
+
 .update-btn {
   width: 100%;
   background: transparent;
@@ -235,7 +231,7 @@
   animation: fieldIn 0.4s ease 0.33s both;
 }
 
-/* Gold sweep — same as all admin buttons */
+
 .update-btn::before {
   content: '';
   position: absolute;
@@ -260,13 +256,13 @@
   transform: scale(0.99);
 }
 
-/* keep text above sweep layer */
+
 .update-btn > * {
   position: relative;
   z-index: 1;
 }
 
-/* ─── Responsive ─── */
+
 @media (max-width: 600px) {
   .edit-page {
     padding: 32px 16px 60px;

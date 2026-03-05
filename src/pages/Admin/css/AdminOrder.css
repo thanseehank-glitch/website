@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables (same as dashboard) ─── */
+
 :root {
   --white:        #ffffff;
   --off-white:    #faf9f7;
@@ -24,7 +24,7 @@
   --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ─── Page ─── */
+
 .orders-page {
   padding: 48px 44px 80px;
   background-color: var(--off-white);
@@ -33,7 +33,7 @@
   color: var(--text-dark);
 }
 
-/* ─── Header ─── */
+
 .orders-header {
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@
   position: relative;
 }
 
-/* Gold accent line under title — same as dashboard */
+
 .orders-header::after {
   content: '';
   position: absolute;
@@ -68,7 +68,7 @@
   line-height: 1;
 }
 
-/* ─── Search Input ─── */
+
 .orders-search {
   background: var(--white);
   border: 1px solid var(--border);
@@ -94,7 +94,7 @@
   box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-/* ─── Table Wrapper ─── */
+
 .orders-table-wrapper {
   background: var(--white);
   border: 1px solid var(--border);
@@ -104,7 +104,7 @@
   position: relative;
 }
 
-/* Gold top border — same as stat-card */
+
 .orders-table-wrapper::before {
   content: '';
   position: absolute;
@@ -121,7 +121,7 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Table ─── */
+
 .orders-table {
   width: 100%;
   border-collapse: collapse;
@@ -129,7 +129,7 @@
   letter-spacing: 0.03em;
 }
 
-/* ─── Table Head ─── */
+
 .orders-table-head {
   background: var(--cream);
   border-bottom: 1px solid var(--border);
@@ -146,7 +146,7 @@
   white-space: nowrap;
 }
 
-/* ─── Table Rows ─── */
+
 .orders-row {
   border-bottom: 1px solid var(--border);
   transition: background 0.2s ease;
@@ -175,14 +175,14 @@
 .orders-row:nth-child(7) { animation-delay: 0.29s; }
 .orders-row:nth-child(8) { animation-delay: 0.33s; }
 
-/* ─── Cells ─── */
+
 .orders-cell {
   padding: 15px 20px;
   color: var(--text-soft);
   vertical-align: middle;
 }
 
-/* Customer name */
+
 .orders-cell:first-child {
   color: var(--text-dark);
   font-weight: 500;
@@ -190,19 +190,18 @@
   letter-spacing: 0.04em;
 }
 
-/* Phone */
 .orders-cell:nth-child(2) {
   color: var(--text-muted);
   font-size: 0.72rem;
   letter-spacing: 0.05em;
 }
 
-/* City */
+
 .orders-cell:nth-child(3) {
   color: var(--text-soft);
 }
 
-/* Total — matches dashboard amount style */
+
 .total-amount {
   font-family: 'Cormorant Garamond', serif !important;
   font-size: 1rem !important;
@@ -211,7 +210,7 @@
   letter-spacing: 0.04em;
 }
 
-/* Payment */
+
 .payment-method {
   color: var(--text-muted) !important;
   font-size: 0.72rem;
@@ -219,14 +218,13 @@
   text-transform: capitalize;
 }
 
-/* Date */
+
 .order-date {
   color: var(--text-muted) !important;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
 }
 
-/* ─── Status Select ─── */
 .status-select {
   appearance: none;
   -webkit-appearance: none;
@@ -255,7 +253,7 @@
   box-shadow: 0 0 0 2px var(--gold-dim);
 }
 
-/* Exact same colors as dashboard status-pill */
+
 .status-confirmed {
   color: var(--confirmed);
   border-color: rgba(74, 158, 110, 0.3);
@@ -292,7 +290,7 @@
   font-size: 0.72rem;
 }
 
-/* ─── Empty State ─── */
+
 .no-data-cell {
   padding: 80px 20px;
   text-align: center;
@@ -307,7 +305,6 @@
   margin: 0;
 }
 
-/* ─── Scrollbar ─── */
 .orders-table-wrapper::-webkit-scrollbar {
   height: 4px;
 }
@@ -321,7 +318,7 @@
   background: var(--gold);
 }
 
-/* ─── Responsive ─── */
+
 @media (max-width: 768px) {
   .orders-page {
     padding: 28px 16px 60px;

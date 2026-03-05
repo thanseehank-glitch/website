@@ -9,10 +9,10 @@ function ProtectedRoute({ children , adminOnly=false}){
   }
 
   if (!authUser) {
-    return <Navigate to={adminOnly ? "/admin":"/login"}replace/>;
+    return <Navigate to={adminOnly ? "/admin":"/login"} replace/>;
   }
 if (adminOnly && authUser.role !== "admin"){
-  return <Navigate to="/"replace/>
+  return <Navigate to="/" replace/>
 }
   return children;
 }

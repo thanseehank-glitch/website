@@ -20,9 +20,6 @@ function AddProduct() {
     });
   };
 
-
-
-
   const handilSubmit = async (e) => {
     e.preventDefault();
 

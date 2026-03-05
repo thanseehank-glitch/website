@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables ─── */
 :root {
   --white:        #ffffff;
   --off-white:    #faf9f7;
@@ -24,7 +23,6 @@
   --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ─── Dashboard Wrapper ─── */
 .admin-dashboard {
   padding: 48px 44px 80px;
   background-color: var(--off-white);
@@ -33,7 +31,7 @@
   color: var(--text-dark);
 }
 
-/* ─── Page Title ─── */
+
 .admin-dashboard::before {
   content: 'Dashboard Overview';
   display: block;
@@ -56,7 +54,7 @@
   margin-bottom: 40px;
 }
 
-/* ─── Stats Grid ─── */
+
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -64,7 +62,7 @@
   margin-bottom: 40px;
 }
 
-/* ─── Stat Card ─── */
+
 .stat-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -122,13 +120,12 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Dashboard Content ─── */
+
 .dashboard-content {
   display: flex;
   gap: 24px;
 }
 
-/* ─── Recent Orders Container ─── */
 .recent-orders-container {
   flex: 1;
   background: var(--white);
@@ -166,7 +163,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Table ─── */
 .admin-table {
   width: 100%;
   border-collapse: collapse;
@@ -190,7 +186,7 @@
   white-space: nowrap;
 }
 
-/* ─── Table Rows ─── */
+
 .admin-table tbody tr {
   border-bottom: 1px solid var(--border);
   transition: background 0.2s ease;
@@ -204,7 +200,7 @@
   background: var(--cream);
 }
 
-/* ─── Table Cells ─── */
+
 .admin-table tbody td {
   padding: 15px 20px;
   color: var(--text-soft);
@@ -230,7 +226,7 @@
   letter-spacing: 0.06em;
 }
 
-/* Amount cell */
+
 .admin-table tbody td:nth-child(5) {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
@@ -238,7 +234,6 @@
   color: var(--gold);
 }
 
-/* ─── Status Pills ─── */
 .status-pill {
   display: inline-block;
   font-size: 0.58rem;
@@ -287,7 +282,6 @@
   background: rgba(201, 110, 110, 0.07);
 }
 
-/* ─── Responsive ─── */
 @media (max-width: 1100px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);

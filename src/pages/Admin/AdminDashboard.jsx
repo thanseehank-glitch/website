@@ -23,13 +23,13 @@ function AdminDashboard() {
   }, []);
 
 
-  const Users = user.filter((item) => item.role !== "admin");
+  const Users = user.filter((item) => item.role !== "admin" && item.status === "active");
 
 
   const totalRevenue = order.reduce((acc, item) => acc + item.total, 0);
 
 
-  const recentOrders = [...order].reverse().slice(0, 5);
+  const recentOrders = [...order].reverse().slice(0,5);
   console.log(recentOrders)
 
   return (
@@ -77,9 +77,9 @@ function AdminDashboard() {
                     <br />
                     <small>{ord.customer.city}</small>
                   </td>
-                  <td>{ord.orderDate}</td>
+                  <td>{ord.createdAt}</td>
                   <td>{ord.payment}</td>
-                  <td>₹{ord.totalAmount}</td>
+                  <td>₹{ord.total}</td>
                   <td>
                     <span className={`status-pill ${ord.status.toLowerCase()}`}>
                       {ord.status}

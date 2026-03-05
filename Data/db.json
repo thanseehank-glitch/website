@@ -22,6 +22,62 @@
       "password": "1234567890",
       "role": "user",
       "status": "active"
+    },
+    {
+      "id": "c584",
+      "username": "ashinkp",
+      "email": "ashin@gmail.com",
+      "password": "567890",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "1725",
+      "username": "sajith",
+      "email": "sajith@gmail.com",
+      "password": "saji123",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "e1cd",
+      "username": "salman",
+      "email": "salmank@gmail.com",
+      "password": "salman55",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "a1f7",
+      "username": "malaikha backer",
+      "email": "mila@gmail.com",
+      "password": "mila123",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "589a",
+      "username": "hiba",
+      "email": "hiba@gmail.com",
+      "password": "hiba123",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "be42",
+      "username": "asifa",
+      "email": "asifa@gmail.com",
+      "password": "asifa123",
+      "role": "user",
+      "status": "active"
+    },
+    {
+      "id": "3d62",
+      "username": "anshif",
+      "email": "anshif@gmail.com",
+      "password": "anshif123",
+      "role": "user",
+      "status": "blocked"
     }
   ],
   "products": [
@@ -29,7 +85,7 @@
       "id": "1",
       "brand": "ROLLEX",
       "name": "Lady-Datejust",
-      "price": 4796000,
+      "price": "4795600",
       "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m279135rbr-0001",
       "description": "The Rolex Lady-Datejust is a timeless luxury watch designed for women who value elegance and precision. Featuring a classic 28mm case, signature date display with Cyclops lens, and a refined bracelet design, this timepiece blends sophistication with everyday functionality. Crafted with premium materials and powered by a self-winding movement, it offers exceptional accuracy and durability. Perfect for both formal occasions and daily wear."
     },
@@ -136,80 +192,72 @@
       "price": 12500000,
       "image": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/202430-51891",
       "description": "A tribute to the ancestral art of Skeletonizing, this rose gold model is distinguished by its ultra-thin self-winding Caliber 240, entirely openworked, decorated and engraved by hand, with the engraving work alone requiring almost 130 hours. A technical and aesthetic feat in equal measure. The off-centered mini-rotor is engraved with the Patek Philippe Seal."
+    },
+    {
+      "id": "fc06",
+      "brand": "ROLLEX",
+      "name": "rolex",
+      "price": "56788",
+      "description": "watches",
+      "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_800/v1/catalogue/2025/upright-c/m279135rbr-0001"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "0615",
+      "userId": "a1f7",
+      "productId": "8",
+      "name": "Carlie",
+      "price": 20000,
+      "image": "https://fossil.scene7.com/is/image/FossilPartners/ES5378SET_main?$sfcc_fos_hi-res$",
+      "quantity": 1
+    }
+  ],
   "order": [
     {
-      "id": "b084",
+      "id": "a978",
       "userId": "f45b",
       "customer": {
-        "fullName": "thanseeha nargees",
+        "fullName": "sdfghjkl;",
         "email": "thanseehank@gmail.com",
         "phone": "8943430476",
-        "address": "pathappiryam po,edavanna,manjeri",
-        "city": "manjeri",
-        "state": "kerala",
-        "zip": "676123"
+        "address": "rydjhkko;;p;",
+        "city": "dfghjk",
+        "state": "vbnm,k",
+        "zip": "dtryui"
       },
       "items": [
         {
-          "id": "233f",
+          "id": "3c5a",
           "userId": "f45b",
-          "productId": "2",
-          "name": "Oyster Perpetual 31",
-          "price": 5850000,
-          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m277200-0017",
-          "quantity": 1
-        },
-        {
-          "id": "b224",
-          "userId": "f45b",
-          "productId": "8",
-          "name": "Carlie",
-          "price": 20000,
-          "image": "https://fossil.scene7.com/is/image/FossilPartners/ES5378SET_main?$sfcc_fos_hi-res$",
-          "quantity": 1
-        },
-        {
-          "id": "712b",
-          "userId": "f45b",
-          "productId": "12",
-          "name": "Tissot Lovely Round",
-          "price": 65000,
-          "image": "https://www.tissotwatches.com/dw/image/v2/BKKD_PRD/on/demandware.static/-/Sites-Tissot-Catalogue/default/dweefbbc08/product-pictures/b043dcfc-f369-4bfa-86c3-c43be5aa97e3_T140-009-61-116-00_Shadow.png?sm=fit&sw=1680&sh=1680,gravity=center",
-          "quantity": 1
-        },
-        {
-          "id": "7cf1",
-          "userId": "f45b",
-          "productId": "13",
-          "name": "Golde ellipse",
-          "price": 6100000,
-          "image": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/202220-51891",
+          "productId": "1",
+          "name": "Lady-Datejust",
+          "price": "4795600",
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m279135rbr-0001",
           "quantity": 1
         }
       ],
-      "subtotal": 12035000,
-      "total": 12035000,
+      "subtotal": 4795600,
+      "total": 4795600,
       "status": "Confirmed",
-      "createdAt": "2026-02-26T04:40:05.509Z"
+      "createdAt": "2026-02-27T09:13:21.399Z",
+      "payment": null
     },
     {
-      "id": "d062",
+      "id": "83c7",
       "userId": "f45b",
       "customer": {
-        "fullName": "thansi",
+        "fullName": "jqsncdwfbe",
         "email": "thanseehank@gmail.com",
-        "phone": "8943430476",
-        "address": "edavannna",
-        "city": "manjeri",
-        "state": "kerala",
-        "zip": "676123"
+        "phone": "xwdefvrgthyjmuk",
+        "address": "axdfegtrhnyjm6tui",
+        "city": "qwer",
+        "state": "wcdefrtwe",
+        "zip": "wert3gh"
       },
       "items": [
         {
-          "id": "abe4",
+          "id": "fabb",
           "userId": "f45b",
           "productId": "2",
           "name": "Oyster Perpetual 31",
@@ -220,8 +268,102 @@
       ],
       "subtotal": 5850000,
       "total": 5850000,
+      "status": "Processing",
+      "createdAt": "2026-02-27T09:15:10.563Z",
+      "payment": "COD"
+    },
+    {
+      "id": "fc06",
+      "userId": "589a",
+      "customer": {
+        "fullName": "hiba",
+        "email": "hiba@gmail.com",
+        "phone": "234668235",
+        "address": "edavanna",
+        "city": "nilambur",
+        "state": "kerala",
+        "zip": "246589"
+      },
+      "items": [
+        {
+          "id": "2b31",
+          "userId": "589a",
+          "productId": "6",
+          "name": "Serpenti Tubogas",
+          "price": 2050000,
+          "image": "https://ad.kapoorwatch.com/content/images/product/103149-700.webp",
+          "quantity": 1
+        }
+      ],
+      "total": 2050000,
       "status": "Pending",
-      "createdAt": "2026-02-26T05:00:38.252Z"
+      "createdAt": "2026-02-28T05:54:12.536Z",
+      "payment": "PhonePe"
+    },
+    {
+      "id": "9028",
+      "userId": "be42",
+      "customer": {
+        "fullName": "asifa",
+        "email": "asifa@gmail.com",
+        "phone": "12345678",
+        "address": "morayur",
+        "city": "kondottyy",
+        "state": "kerala",
+        "zip": "456789"
+      },
+      "items": [
+        {
+          "id": "96d8",
+          "userId": "be42",
+          "productId": "6",
+          "name": "Serpenti Tubogas",
+          "price": 2050000,
+          "image": "https://ad.kapoorwatch.com/content/images/product/103149-700.webp",
+          "quantity": 1
+        }
+      ],
+      "total": 2050000,
+      "status": "Pending",
+      "createdAt": "2026-02-28T14:08:26.543Z",
+      "payment": "COD"
+    },
+    {
+      "id": "57e1",
+      "userId": "3d62",
+      "customer": {
+        "fullName": "anshif",
+        "email": "anshif@gmail.com",
+        "phone": "12345667890",
+        "address": "mqnjeri",
+        "city": "manjeri",
+        "state": "kerala",
+        "zip": "123456"
+      },
+      "items": [
+        {
+          "id": "0b57",
+          "userId": "3d62",
+          "productId": "1",
+          "name": "Lady-Datejust",
+          "price": "4795600",
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1920/v1/catalogue/2025/upright-c/m279135rbr-0001",
+          "quantity": 1
+        },
+        {
+          "id": "e0e6",
+          "userId": "3d62",
+          "productId": "8",
+          "name": "Carlie",
+          "price": 20000,
+          "image": "https://fossil.scene7.com/is/image/FossilPartners/ES5378SET_main?$sfcc_fos_hi-res$",
+          "quantity": 1
+        }
+      ],
+      "total": 4815600,
+      "status": "Confirmed",
+      "createdAt": "2026-02-28T15:08:20.433Z",
+      "payment": "COD"
     }
   ]
 }

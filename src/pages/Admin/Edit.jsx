@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import { toast } from "react-toastify";
 import "./css/Edit.css";
+
 function Edit() {
     const navigate = useNavigate()
     const { id } = useParams();

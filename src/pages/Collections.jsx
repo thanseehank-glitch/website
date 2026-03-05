@@ -11,7 +11,7 @@ function Collections() {
   const [activeBrand, setActiveBrand] = useState("ALL");
   const [search, setSearch] = useState("");
 
-  
+
   const brands = ["ALL", "ROLLEX", "BVLGARI", "FOSSIL", "TISSOT", "PATEK PHILIPPE"];
 
   const handleBrand = (brand) => {
@@ -24,7 +24,7 @@ function Collections() {
         setProduct(response.data);
         setFilter(response.data);
       })
-      .catch((err) => { 
+      .catch((err) => {
         console.error(err);
         toast.error("Failed to load products");
       });
@@ -33,14 +33,14 @@ function Collections() {
   useEffect(() => {
     let updatedProducts = product;
 
-    
+
     if (activeBrand !== "ALL") {
       updatedProducts = updatedProducts.filter(
         (item) => item.brand.toUpperCase() === activeBrand.toUpperCase()
       );
     }
 
-    
+
     if (search) {
       updatedProducts = updatedProducts.filter((item) =>
         item.name.toLowerCase().includes(search.toLowerCase())
@@ -52,7 +52,7 @@ function Collections() {
 
   return (
     <>
-     <Navbar />
+      <Navbar />
       <div className="page-">
         <div className="filter-header">
           <div className="brand-filter">
@@ -65,7 +65,7 @@ function Collections() {
                 {b}
               </button>
             ))}
-            
+
             <div className="search-box">
               <input
                 type="text"
@@ -76,21 +76,26 @@ function Collections() {
             </div>
           </div>
         </div>
-        
+
         <hr />
 
         <div className="products-container">
           {filter.length > 0 ? (
             filter.map((item) => (
-              <div key={item.id} className="product-card">
-                <div className="product-image">
+              <div key={item.id} className="collections-product-card">
+                <div className="collections-product-image">
                   <img src={item.image} alt={item.name} />
                 </div>
-                <div className="product-info">
-                  <p className="brand-name">{item.brand}</p>
-                  <h3>{item.name}</h3>
-                  <p className="price">₹{item.price.toLocaleString('en-IN')}</p>
-                  <Link to={`/product/${item.id}`} className="details-link">
+                <div className="collections-product-info">
+                  <p className="collections-brand-name">{item.brand}</p>
+                  <h3 className="collections-product-title">{item.name}</h3>
+                  <p className="collections-price">
+                    ₹{item.price.toLocaleString('en-IN')}
+                  </p>
+                  <Link
+                    to={`/product/${item.id}`}
+                    className="collections-details-link"
+                  >
                     View Details
                   </Link>
                 </div>
@@ -108,5 +113,5 @@ function Collections() {
   );
 }
 
-export default Collections;   
+export default Collections;
 

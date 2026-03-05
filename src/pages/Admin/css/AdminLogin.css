@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables (same as dashboard) ─── */
+
 :root {
   --white:        #ffffff;
   --off-white:    #faf9f7;
@@ -19,7 +19,7 @@
   --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ─── Full Page Container ─── */
+
 .admin-login-container {
   min-height: 100vh;
   background-color: var(--off-white);
@@ -32,7 +32,7 @@
   padding: 40px 20px;
 }
 
-/* ─── Login Card ─── */
+
 .admin-login-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -45,7 +45,7 @@
   animation: cardIn 0.5s ease both;
 }
 
-/* Gold glow corner — same as stat-card */
+
 .admin-login-card::after {
   content: '';
   position: absolute;
@@ -62,7 +62,7 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Brand Mark ─── */
+
 .admin-login-card::before {
   content: 'ZIVORA';
   display: block;
@@ -75,7 +75,7 @@
   margin-bottom: 28px;
 }
 
-/* ─── Title ─── */
+
 .admin-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
@@ -88,7 +88,7 @@
   line-height: 1.2;
 }
 
-/* ─── Subtitle ─── */
+
 .admin-subtitle {
   font-size: 0.68rem;
   font-weight: 400;
@@ -99,7 +99,7 @@
   text-transform: uppercase;
 }
 
-/* Gold divider under subtitle */
+
 .admin-subtitle::after {
   content: '';
   display: block;
@@ -109,14 +109,12 @@
   margin: 14px auto 0;
 }
 
-/* ─── Form ─── */
 .admin-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* ─── Input Group ─── */
 .admin-input-group {
   display: flex;
   flex-direction: column;
@@ -158,7 +156,6 @@
   box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-/* ─── Error Message ─── */
 .admin-error {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -177,7 +174,7 @@
   75%       { transform: translateX(6px); }
 }
 
-/* ─── Submit Button ─── */
+
 .admin-login-btn {
   width: 100%;
   background: transparent;
@@ -216,7 +213,6 @@
   box-shadow: 0 4px 20px rgba(184, 147, 90, 0.3);
 }
 
-/* Keep text above the sliding fill */
 .admin-login-btn span {
   position: relative;
   z-index: 1;
@@ -227,7 +223,6 @@
   z-index: 1;
 }
 
-/* ─── Responsive ─── */
 @media (max-width: 480px) {
   .admin-login-card {
     padding: 40px 28px 36px;

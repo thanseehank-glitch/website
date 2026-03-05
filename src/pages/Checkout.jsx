@@ -6,10 +6,12 @@ import axios from "axios";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import "./css/Checkout.css";
+import { toast } from "react-toastify";
 
 const Checkout = () => {
   const { cart, subtotal, clearCart } = useCart();
   const { authUser } = useAuth();
+  const [payment,setPayment]=useState(null);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -41,7 +43,10 @@ const Checkout = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if(payment === null ){
+      toast.error("please select payment method");
+      return
+    } 
     if (!authUser) return alert("Login first");
     if (cart.length === 0) return alert("Cart empty");
 
@@ -49,10 +54,10 @@ const Checkout = () => {
       userId: authUser.id,
       customer: formData,
       items: cart,
-      subtotal,
       total: subtotal,
       status: "Pending",
       createdAt: new Date().toISOString(),
+      payment : payment
     };
 
     try {
@@ -71,8 +76,8 @@ const Checkout = () => {
         zip: "",
       });
 
-      alert("Order Placed Successfully ");
-      navigate("/checkout");
+      toast.success("Order placed succesfully")
+      navigate("/");
     } catch (error) {
       console.error(error);
       alert("Something went wrong!");
@@ -144,7 +149,23 @@ const Checkout = () => {
             required
             onChange={handleChange}
           />
+          <div className="payment-group">
+                <label>
+                  <input type="radio" name="paymentMethod"  onChange={()=>setPayment("COD")} />
+                  Cash on Delivery
+                </label>
 
+                <label>
+                  <input type="radio" name="paymentMethod" onChange={()=>setPayment("Google Pay")} />
+                  Google Pay
+                </label>
+
+                <label>
+                  <input type="radio" name="paymentMethod"  onChange={()=>setPayment("PhonePe")} />
+                  PhonePe
+                </label>
+              </div>
+              
           <button type="submit">Place Order</button>
         </form>
 

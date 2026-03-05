@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables ─── */
+
 :root {
   --white:        #ffffff;
   --off-white:    #faf9f7;
@@ -22,7 +22,7 @@
   --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
-/* ─── Page ─── */
+
 .admin-users-container {
   padding: 48px 44px 80px;
   background-color: var(--off-white);
@@ -31,7 +31,7 @@
   color: var(--text-dark);
 }
 
-/* ─── Header ─── */
+
 .admin-users-header {
   display: flex;
   align-items: flex-end;
@@ -54,7 +54,6 @@
   background: var(--gold);
 }
 
-/* ─── Title ─── */
 .admin-users-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.2rem;
@@ -66,7 +65,7 @@
   line-height: 1;
 }
 
-/* ─── Search ─── */
+
 .admin-users-search {
   background: var(--white);
   border: 1px solid var(--border);
@@ -92,7 +91,7 @@
   box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
-/* ─── Table Wrapper ─── */
+
 .admin-users-table-wrapper {
   background: var(--white);
   border: 1px solid var(--border);
@@ -101,7 +100,7 @@
   overflow-x: auto;
 }
 
-/* ─── Table ─── */
+
 .admin-users-table {
   width: 100%;
   border-collapse: collapse;
@@ -109,7 +108,7 @@
   letter-spacing: 0.03em;
 }
 
-/* ─── Table Head ─── */
+
 .admin-users-table thead tr {
   background: var(--cream);
   border-bottom: 1px solid var(--border);
@@ -126,7 +125,7 @@
   white-space: nowrap;
 }
 
-/* ─── Rows ─── */
+
 .admin-users-row {
   border-bottom: 1px solid var(--border);
   transition: background 0.2s ease;
@@ -150,7 +149,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Cells ─── */
 .admin-users-table tbody td {
   padding: 15px 22px;
   color: var(--text-soft);
@@ -175,7 +173,7 @@
   font-size: 0.72rem;
 }
 
-/* ─── Status Badge ─── */
+
 .status-badge {
   display: inline-block;
   font-size: 0.58rem;
@@ -205,7 +203,7 @@
   background: var(--block-dim);
 }
 
-/* ─── Action Buttons ─── */
+
 .btn-status {
   background: transparent;
   border: 1px solid;
@@ -240,7 +238,7 @@
   box-shadow: 0 2px 10px rgba(74, 158, 110, 0.12);
 }
 
-/* ─── Empty State ─── */
+
 .no-users {
   padding: 72px 20px !important;
   text-align: center;
@@ -261,7 +259,7 @@
   font-style: normal;
 }
 
-/* ─── Scrollbar ─── */
+
 .admin-users-table-wrapper::-webkit-scrollbar {
   height: 4px;
 }
@@ -275,7 +273,6 @@
   background: var(--gold);
 }
 
-/* ─── Responsive ─── */
 @media (max-width: 768px) {
   .admin-users-container {
     padding: 28px 16px 60px;

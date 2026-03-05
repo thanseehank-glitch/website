@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* ─── Variables ─── */
 :root {
   --white:         #ffffff;
   --off-white:     #faf9f7;
@@ -21,14 +20,13 @@
   --shadow-gold:   0 4px 24px rgba(184, 147, 90, 0.1);
 }
 
-/* ─── Reset ─── */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ─── Admin Container ─── */
+
 .admin-container {
   display: flex;
   min-height: 100vh;
@@ -36,9 +34,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* ══════════════════════════════
-   SIDEBAR
-══════════════════════════════ */
+
 .sidebar {
   width: var(--sidebar-w);
   min-height: 100vh;
@@ -54,7 +50,6 @@
   box-shadow: var(--shadow-soft);
 }
 
-/* ─── Sidebar Header ─── */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -64,7 +59,6 @@
   position: relative;
 }
 
-/* Gold accent line — matches dashboard */
 .sidebar-header::after {
   content: '';
   position: absolute;
@@ -75,7 +69,6 @@
   background: var(--gold);
 }
 
-/* Z logo box */
 .logo-icon {
   width: 38px;
   height: 38px;
@@ -101,7 +94,7 @@
   line-height: 1;
 }
 
-/* ─── Sidebar Nav ─── */
+
 .sidebar-nav {
   flex: 1;
   padding: 24px 16px;
@@ -110,7 +103,7 @@
   gap: 2px;
 }
 
-/* ─── Nav Links ─── */
+
 .nav-link {
   display: flex;
   align-items: center;
@@ -144,14 +137,13 @@
   opacity: 1;
 }
 
-/* ─── Active state ─── */
 .nav-link.active {
   color: var(--gold);
   background: var(--gold-dim);
   border-color: rgba(184, 147, 90, 0.2);
 }
 
-/* Left gold bar on active */
+
 .nav-link.active::before {
   content: '';
   position: absolute;
@@ -167,13 +159,12 @@
   opacity: 1;
 }
 
-/* ─── Sidebar Footer ─── */
 .sidebar-footer {
   padding: 20px 16px 32px;
   border-top: 1px solid var(--border);
 }
 
-/* ─── Logout Button ─── */
+
 .logout-btn {
   display: flex;
   align-items: center;
@@ -211,9 +202,6 @@
   color: #c0392b;
 }
 
-/* ══════════════════════════════
-   MAIN CONTENT
-══════════════════════════════ */
 .admin-content {
   margin-left: var(--sidebar-w);
   flex: 1;
@@ -221,9 +209,6 @@
   background-color: var(--off-white);
 }
 
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
 @media (max-width: 768px) {
   :root {
     --sidebar-w: 72px;

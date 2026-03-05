@@ -91,7 +91,7 @@ function AdminOrders() {
                   </td>
 
                   <td className="orders-cell order-date">
-                    {order.orderDate}
+                    {order.createdAt}
                   </td>
                 </tr>
               ))
